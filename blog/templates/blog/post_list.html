@@ -9,5 +9,15 @@
         <p>Witam na stronie bloga</p>
         <p>Witam na stronie bloga</p>
         <p>Witam na stronie bloga</p>
+
+        <div>
+            {% for post in posts %}
+        </div>
+
+            <p>opublikowany: {{ post.pubished_date }}</p>
+            <h2><a href=""> {{ post.title }} </a></h2>
+            <em> {{ post.text| linebreaksbr }} </em>
+
+            {% endfor%}
     </body>
 </html>
