@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>', ImageDisplay.as_view(), name='image_display'),
-    path('post/new', blog.views.post_new, name='post_new'),
+    path('post/new/', blog.views.post_new, name='post_new'),
 ]
 
 handler404 = 'blog.views.error_404_view'
