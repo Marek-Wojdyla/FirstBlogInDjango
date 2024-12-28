@@ -18,14 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from blog.views import Image, ImageDisplay
 
+import blog.views
+from blog.views import Image, ImageDisplay
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>', ImageDisplay.as_view(), name='image_display'),
+    path('post/new', blog.views.post_new, name='post_new'),
 ]
 
 handler404 = 'blog.views.error_404_view'
